@@ -1,39 +1,104 @@
-# Driver_drowsiness_system_CNN
-This is a system which can detect the drowsiness of the driver using CNN - Python, OpenCV
+Driver Drowsiness Detection using CNN
 
-The aim of this is system to reduce the number of accidents on the road by detecting the drowsiness of the driver and warning them using an alarm. 
+Project Overview
 
-Here, we used Python, OpenCV, Keras(tensorflow) to build a system that can detect features from the face of the drivers and alert them if ever they fall asleep while while driving. The system dectects the eyes and prompts if it is closed or open. If the eyes are closed for 3 seconds it will play the alarm to get the driver's attention, to stop cause its drowsy.We have build a CNN network which is trained on a dataset which can detect closed and open eyes. Then OpenCV is used to get the live fed from the camera and run that frame through the CNN model to process it and classify wheather it opened or closed eyes.
+Driver Drowsiness Detection is a computer vision and deep learning project that detects whether a driver is feeling sleepy by monitoring their eye movements.
 
-## Setup
-To set the model up:<br />
-Pre-install all the required libraries <br />1) OpenCV<br />
-                                       2) Keras<br />
-                                       3) Numpy<br />
-                                       4) Pandas<br />
-                                       5) OS<br />
-Download the Dataset from the link given below and edit the address in the notebook accordingly.<br />
-Run the Jupyter Notebook and add the model name in detect_drowsiness.py file in line 20.<br />
+The system uses a Convolutional Neural Network (CNN) to classify eyes as Open or Closed. If the driver's eyes remain closed for a certain duration, the system triggers an alarm to alert the driver.
 
-## The Dataset
-The dataset which was used is a subnet of a dataset from(https://www.kaggle.com/datasets/dheerajperumandla/drowsiness-dataset)<br />
-it has 4 folder which are <br />1) Closed_eyes - having 726 pictures<br />
-                          2) Open_eyes - having 726 pictures<br />
-                          3) Yawn - having 725 pictures<br />
-                          4) no_yawn - having 723 pictures<br />
+The main objective of this project is to help reduce road accidents caused by driver fatigue and drowsiness.
 
-## The Convolution Neural Network
-![CNN](https://user-images.githubusercontent.com/16632408/159187014-4bc4b70e-98d6-4313-873f-997ded2eff27.png)
+Technologies Used
 
-## Accuracy 
-We did 50 epochs, to get a good accuracy from the model i.e. 98% for training accuracy and 96% for validation accuracy.
-![Graph](https://user-images.githubusercontent.com/16632408/159187004-92a72662-ddfe-471d-8bd6-65a3593a70a1.png)
+- Python
+- TensorFlow / Keras
+- OpenCV
+- NumPy
+- Pandas
+- Convolutional Neural Network (CNN)
+- Jupyter Notebook
 
-## The Output 
-1. Open Eyes<br />
-![Open_eyes](https://user-images.githubusercontent.com/16632408/159187179-b557ab8e-fb8c-4408-850b-417893014f8c.png)
-2. Close Eyes<br />
-Here we detect wheater the eyes are closed and count the number of frames for which the eyes were closed (which is 10 frame) greater then that the Alarm will ring and the WARNING sign is displayed.
-![Closed_eyes](https://user-images.githubusercontent.com/16632408/159187305-68cbdee3-8325-4216-85e3-7dbb66a429fb.png)
+Features
 
+- Real-time face and eye detection
+- Open and Closed eye classification
+- CNN-based prediction
+- Drowsiness detection
+- Alarm alert system
+- Visual warning message
 
+Project Structure
+
+Driver-Drowsiness-Detection-CNN/
+│
+├── app.py
+├── detect_drowsiness.py
+├── drowsness_new.h5
+├── README.md
+└── requirements.txt
+
+Note: The actual files may vary depending on the project version.
+
+Installation
+
+1. Clone the Repository
+
+git clone https://github.com/aadii0758/Driver-Drowsiness-Detection-CNN.git
+
+2. Navigate to Project Folder
+
+cd Driver-Drowsiness-Detection-CNN
+
+3. Install Dependencies
+
+pip install -r requirements.txt
+
+Dataset
+
+The dataset contains images of:
+
+1. Closed Eyes
+2. Open Eyes
+3. Yawn
+4. No Yawn
+
+Dataset Reference:
+
+https://www.kaggle.com/datasets/dheerajperumandla/drowsiness-dataset
+
+CNN Model
+
+The project uses a Convolutional Neural Network (CNN) trained to classify eye images into open and closed categories.
+
+Model Performance
+
+The original project reports:
+
+- Training Accuracy: 98%
+- Validation Accuracy: 96%
+- Training Epochs: 50
+
+These are the reported results from the original project and may vary when retrained.
+
+How It Works
+
+1. The webcam captures live video.
+2. OpenCV processes the video frames.
+3. The system detects the driver's eyes.
+4. CNN predicts whether the eyes are open or closed.
+5. If the eyes remain closed for a specified duration, an alarm is triggered.
+
+Future Improvements
+
+- Improve prediction accuracy.
+- Add fatigue detection using facial landmarks.
+- Develop a web-based interface.
+- Add real-time monitoring and alerts.
+
+Author
+
+Aman Kumar
+
+License
+
+This project is intended for educational and research purposes.
